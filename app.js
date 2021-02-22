@@ -8,21 +8,34 @@ eventListeners();
 
 function eventListeners() {
 
-    form.addEventListener("submit",getData);
+    form.addEventListener("submit", getData);
 }
 
 function getData(e) {
 
-    const userName= input.value.trim();
+    const userName = input.value.trim();    
 
-    github.getGithubData(userName)
-    .then(response => {
-        console.log(response.user);
-        ui.addUserInf(response.user);
-        ui.addUserRepos(response.repo)
-    })
+    if (userName === "") {
+        ui.BlankAlert("This Field Can't be Empty!");
+    }
 
-    
-    
+    else {
+        github.getGithubData(userName)
+            .then(response => {
+
+                if (response.user.message === "Not Found") {
+
+                    ui.BlankAlert("Users Not Found!");
+
+                }
+                else {
+                    ui.addUserInf(response.user);
+                    ui.addUserRepos(response.repo);
+                    ui.scrool();
+                }
+            })
+    }
+
     e.preventDefault();
-}
+};
+

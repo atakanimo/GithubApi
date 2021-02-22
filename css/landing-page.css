@@ -3,11 +3,14 @@
  * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-landing-page/blob/master/LICENSE)
  */
-
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+nav a {
+  margin-bottom:1rem;
+  margin-top: 1rem;
 
+}
 
 h1,
 h2,
@@ -20,10 +23,13 @@ h6 {
 }
 
 header.masthead {
+
+  width: auto;
+  /* height: 650px; */
   position: relative;
   background-color: #343a40;
   background: url("../img/bg-masthead.jpg") no-repeat center center;
-  background-size: cover;
+
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
@@ -35,7 +41,7 @@ header.masthead .overlay {
   width: 100%;
   top: 0;
   left: 0;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 header.masthead h1 {
@@ -46,12 +52,18 @@ header.masthead h1 {
   header.masthead {
     padding-top: 12rem;
     padding-bottom: 12rem;
+    height: 710px;
   }
   header.masthead h1 {
     font-size: 3rem;
   }
 }
 
+@media (min-width: 768px) {
+  .showcase .showcase-text {
+    padding: 7rem;
+  }
+}
 .showcase .showcase-text {
   padding: 3rem;
 }
@@ -61,15 +73,9 @@ header.masthead h1 {
   background-size: cover;
 }
 
-@media (min-width: 768px) {
-  .showcase .showcase-text {
-    padding: 7rem;
-  }
-}
-
 .features-icons {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .features-icons .features-icons-item {
@@ -122,6 +128,6 @@ header.masthead h1 {
 }
 
 footer.footer {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
 }

@@ -1,5 +1,6 @@
 const usersInf = document.querySelector(".user-Inf");
 const reposInf = document.querySelector(".repos-Inf");
+const inputText= document.getElementById("inputText");
 
 class UI {
 
@@ -9,7 +10,7 @@ class UI {
     
         <div class="card text-center">
       <div class="card-header">
-        Results
+        <h4>${user.login}'s Github</h4>
       </div>
       <div class="card-body">
       <img style="width:15%" class="img-fluid mb-2" src="${user.avatar_url}"></a>
@@ -52,5 +53,14 @@ class UI {
             `
         })
 
+    }
+
+    BlankAlert(message) {
+      inputText.value="";
+      inputText.placeholder = message;
+
+    }
+    scrool() {
+      document.querySelector(".card-header").scrollIntoView();
     }
 }
